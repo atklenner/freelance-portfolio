@@ -1,42 +1,21 @@
 ---
 import Stack from "../components/Stack.astro";
 import Layout from "../layouts/Layout.astro";
+import Center from "../components/Center.astro";
+import Flow from "../components/Flow.astro";
 ---
 
 <Layout title="Welcome to my Ass.">
-  <div class="flow">
-    <h1>Welcome to <span class="text-gradient">My Ass</span></h1>
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo
-      tempore est ipsam minus placeat eligendi aliquam, quibusdam, cum dolorum
-      cumque odio aliquid odit reiciendis earum quam veniam consequuntur
-      temporibus. Libero.
-    </p>
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo
-      tempore est ipsam minus placeat eligendi aliquam, quibusdam, cum dolorum
-      cumque odio aliquid odit reiciendis earum quam veniam consequuntur
-      temporibus. Libero.
-    </p>
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo
-      tempore est ipsam minus placeat eligendi aliquam, quibusdam, cum dolorum
-      cumque odio aliquid odit reiciendis earum quam veniam consequuntur
-      temporibus. Libero.
-    </p>
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo
-      tempore est ipsam minus placeat eligendi aliquam, quibusdam, cum dolorum
-      cumque odio aliquid odit reiciendis earum quam veniam consequuntur
-      temporibus. Libero.
-    </p>
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo
-      tempore est ipsam minus placeat eligendi aliquam, quibusdam, cum dolorum
-      cumque odio aliquid odit reiciendis earum quam veniam consequuntur
-      temporibus. Libero.
-    </p>
-    <Stack splitAfter={2}>
+  <Center gutter="6rem">
+    <Flow>
+      <h1>Welcome</h1>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo
+        tempore est ipsam minus placeat eligendi aliquam, quibusdam, cum dolorum
+        cumque odio aliquid odit reiciendis earum quam veniam consequuntur
+        temporibus. Libero.
+      </p>
+      <h2>Here is an H2</h2>
       <p>
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo
         tempore est ipsam minus placeat eligendi aliquam, quibusdam, cum dolorum
@@ -49,14 +28,41 @@ import Layout from "../layouts/Layout.astro";
         cumque odio aliquid odit reiciendis earum quam veniam consequuntur
         temporibus. Libero.
       </p>
+      <h3>Here is an H3</h3>
       <p>
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo
         tempore est ipsam minus placeat eligendi aliquam, quibusdam, cum dolorum
         cumque odio aliquid odit reiciendis earum quam veniam consequuntur
         temporibus. Libero.
       </p>
-    </Stack>
-  </div>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo
+        tempore est ipsam minus placeat eligendi aliquam, quibusdam, cum dolorum
+        cumque odio aliquid odit reiciendis earum quam veniam consequuntur
+        temporibus. Libero.
+      </p>
+      <Stack splitAfter={2}>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo
+          tempore est ipsam minus placeat eligendi aliquam, quibusdam, cum
+          dolorum cumque odio aliquid odit reiciendis earum quam veniam
+          consequuntur temporibus. Libero.
+        </p>
+        <p class="split-after">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo
+          tempore est ipsam minus placeat eligendi aliquam, quibusdam, cum
+          dolorum cumque odio aliquid odit reiciendis earum quam veniam
+          consequuntur temporibus. Libero.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo
+          tempore est ipsam minus placeat eligendi aliquam, quibusdam, cum
+          dolorum cumque odio aliquid odit reiciendis earum quam veniam
+          consequuntur temporibus. Libero.
+        </p>
+      </Stack>
+    </Flow>
+  </Center>
 </Layout>
 
 <style>
