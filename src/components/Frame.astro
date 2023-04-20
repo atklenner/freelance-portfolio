@@ -1,0 +1,27 @@
+---
+export interface Props {
+  className: string;
+}
+
+const { className = "" } = Astro.props;
+---
+
+<div class={`frame ${className}`}>
+  <slot />
+</div>
+
+<style>
+  .frame {
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .frame :global(> img),
+  .frame :global(> video) {
+    inline-size: 100%;
+    block-size: 100%;
+    object-fit: cover;
+  }
+</style>
