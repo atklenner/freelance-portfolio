@@ -1,0 +1,26 @@
+---
+export interface Props {
+  className: string;
+}
+
+const { className } = Astro.props;
+---
+
+<div class={`cover ${className}`}>
+  <slot name="header" />
+  <div class="cover-center">
+    <slot name="center" />
+  </div>
+  <slot name="footer" />
+</div>
+
+<style>
+  .cover {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .cover-center {
+    margin-block: auto;
+  }
+</style>
