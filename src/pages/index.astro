@@ -3,104 +3,81 @@ import Stack from "../components/Stack.astro";
 import Layout from "../layouts/Layout.astro";
 import Center from "../components/Center.astro";
 import Flow from "../components/Flow.astro";
+import Cluster from "../components/Cluster.astro";
+import Sidebar from "../components/Sidebar.astro";
+import Wrapper from "../components/Wrapper.astro";
 ---
 
 <Layout title="Welcome to my Ass.">
-  <Center gutter="6rem">
-    <Flow>
-      <h1>Welcome</h1>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo
-        tempore est ipsam minus placeat eligendi aliquam, quibusdam, cum dolorum
-        cumque odio aliquid odit reiciendis earum quam veniam consequuntur
-        temporibus. Libero.
-      </p>
-      <h2>Here is an H2</h2>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo
-        tempore est ipsam minus placeat eligendi aliquam, quibusdam, cum dolorum
-        cumque odio aliquid odit reiciendis earum quam veniam consequuntur
-        temporibus. Libero.
-      </p>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo
-        tempore est ipsam minus placeat eligendi aliquam, quibusdam, cum dolorum
-        cumque odio aliquid odit reiciendis earum quam veniam consequuntur
-        temporibus. Libero.
-      </p>
-      <h3>Here is an H3</h3>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo
-        tempore est ipsam minus placeat eligendi aliquam, quibusdam, cum dolorum
-        cumque odio aliquid odit reiciendis earum quam veniam consequuntur
-        temporibus. Libero.
-      </p>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo
-        tempore est ipsam minus placeat eligendi aliquam, quibusdam, cum dolorum
-        cumque odio aliquid odit reiciendis earum quam veniam consequuntur
-        temporibus. Libero.
-      </p>
-      <Stack splitAfter={2}>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo
-          tempore est ipsam minus placeat eligendi aliquam, quibusdam, cum
-          dolorum cumque odio aliquid odit reiciendis earum quam veniam
-          consequuntur temporibus. Libero.
-        </p>
-        <p class="split-after">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo
-          tempore est ipsam minus placeat eligendi aliquam, quibusdam, cum
-          dolorum cumque odio aliquid odit reiciendis earum quam veniam
-          consequuntur temporibus. Libero.
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo
-          tempore est ipsam minus placeat eligendi aliquam, quibusdam, cum
-          dolorum cumque odio aliquid odit reiciendis earum quam veniam
-          consequuntur temporibus. Libero.
-        </p>
-      </Stack>
-    </Flow>
-  </Center>
+  <Wrapper>
+    <Sidebar sidebarWidth="20ch">
+      <Cluster isList={true} slot="sidebar">
+        <a href="#">Link</a>
+        <a href="#">Link</a>
+        <a href="#">Link</a>
+        <a href="#">Link</a>
+        <a href="#">Link</a>
+        <a href="#">Link</a>
+        <a href="#">Link</a>
+        <a href="#">Link</a>
+      </Cluster>
+      <Center slot="not-sidebar">
+        <Flow>
+          <h1>Welcome</h1>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo
+            tempore est ipsam minus placeat eligendi aliquam, quibusdam, cum
+            dolorum cumque odio aliquid odit reiciendis earum quam veniam
+            consequuntur temporibus. Libero.
+          </p>
+          <h2>Here is an H2</h2>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo
+            tempore est ipsam minus placeat eligendi aliquam, quibusdam, cum
+            dolorum cumque odio aliquid odit reiciendis earum quam veniam
+            consequuntur temporibus. Libero.
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo
+            tempore est ipsam minus placeat eligendi aliquam, quibusdam, cum
+            dolorum cumque odio aliquid odit reiciendis earum quam veniam
+            consequuntur temporibus. Libero.
+          </p>
+          <h3>Here is an H3</h3>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo
+            tempore est ipsam minus placeat eligendi aliquam, quibusdam, cum
+            dolorum cumque odio aliquid odit reiciendis earum quam veniam
+            consequuntur temporibus. Libero.
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo
+            tempore est ipsam minus placeat eligendi aliquam, quibusdam, cum
+            dolorum cumque odio aliquid odit reiciendis earum quam veniam
+            consequuntur temporibus. Libero.
+          </p>
+          <Stack splitAfter={2}>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+              Explicabo tempore est ipsam minus placeat eligendi aliquam,
+              quibusdam, cum dolorum cumque odio aliquid odit reiciendis earum
+              quam veniam consequuntur temporibus. Libero.
+            </p>
+            <p class="split-after">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+              Explicabo tempore est ipsam minus placeat eligendi aliquam,
+              quibusdam, cum dolorum cumque odio aliquid odit reiciendis earum
+              quam veniam consequuntur temporibus. Libero.
+            </p>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+              Explicabo tempore est ipsam minus placeat eligendi aliquam,
+              quibusdam, cum dolorum cumque odio aliquid odit reiciendis earum
+              quam veniam consequuntur temporibus. Libero.
+            </p>
+          </Stack>
+        </Flow>
+      </Center>
+    </Sidebar>
+  </Wrapper>
 </Layout>
-
-<style>
-  h1 {
-    font-size: 3rem;
-    font-weight: 800;
-    margin: 0;
-  }
-  .text-gradient {
-    background-image: var(--accent-gradient);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-size: 400%;
-    background-position: 0%;
-  }
-  .instructions {
-    line-height: 1.6;
-    margin: 1rem 0;
-    border: 1px solid rgba(var(--accent), 25%);
-    background-color: white;
-    padding: 1rem;
-    border-radius: 0.4rem;
-  }
-  .instructions code {
-    font-size: 0.875em;
-    font-weight: bold;
-    background: rgba(var(--accent), 12%);
-    color: rgb(var(--accent));
-    border-radius: 4px;
-    padding: 0.3em 0.45em;
-  }
-  .instructions strong {
-    color: rgb(var(--accent));
-  }
-  .link-card-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
-    gap: 1rem;
-    padding: 0;
-  }
-</style>
