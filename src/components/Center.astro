@@ -1,0 +1,21 @@
+---
+export interface Props {
+  gutter: string;
+  maxInlineSize: string;
+}
+
+const { gutter = "var(--space-size-1)", maxInlineSize = "75ch" } = Astro.props;
+---
+
+<div class="center">
+  <slot />
+</div>
+
+<style define:vars={{ gutter, maxInlineSize }}>
+  .center {
+    box-sizing: content-box;
+    padding-inline: var(--gutter);
+    margin-inline: auto;
+    max-inline-size: var(--maxInlineSize);
+  }
+</style>
