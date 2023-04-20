@@ -1,0 +1,18 @@
+---
+export interface Props {
+  flowSpace: string;
+}
+
+const { flowSpace = "var(--space-size-1)" } = Astro.props;
+---
+
+<article class="flow-recursive">
+  <slot />
+</article>
+
+<style define:vars={{ flowSpace }}>
+  .flow-recursive :global(* + *) {
+    --flow-space: var(--flowSpace);
+    margin-block-start: var(--flow-space);
+  }
+</style>
