@@ -1,0 +1,43 @@
+---
+export interface Props {
+  gutter: string;
+  alignItems: string;
+  justifyContent: string;
+  isList: boolean;
+  isOrderedList: boolean;
+}
+
+const {
+  gutter = "var(--space-size-1)",
+  alignItems = "stretch",
+  justifyContent = "flex-start",
+  isList = false,
+  isOrderedList = false,
+} = Astro.props;
+
+// doing it this way prevents me from using the "client:* hydration directives"
+let Element;
+if (isList) {
+  Element = "ul";
+} else if (isOrderedList) {
+  Element = "ol";
+} else {
+  Element = "div";
+}
+---
+
+<Element>
+  <slot />
+</Element>
+
+<style define:vars={{ gutter, alignItems, justifyContent }}>
+  ul,
+  ol,
+  div {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--gutter);
+    align-items: var(--alignItems);
+    justify-content: var(--justifyContent);
+  }
+</style>
