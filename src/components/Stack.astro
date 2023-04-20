@@ -1,0 +1,25 @@
+---
+export interface Props {
+  splitAfter?: number;
+  gap: string;
+}
+
+const { gap = "var(--space-size-1)", splitAfter } = Astro.props;
+---
+
+<div class="stack">
+  <slot />
+</div>
+
+<style define:vars={{ gap }}>
+  .stack {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap);
+  }
+
+  .stack :global(:nth-child(2)) {
+    margin-block-end: auto;
+    background-color: black;
+  }
+</style>
