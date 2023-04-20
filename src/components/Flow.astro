@@ -1,0 +1,34 @@
+---
+export interface Props {
+  flowSpace: string;
+}
+
+const { flowSpace = "var(--space-size-1)" } = Astro.props;
+---
+
+<article class="flow">
+  <slot />
+</article>
+
+<style define:vars={{ flowSpace }}>
+  .flow :global(> * + *) {
+    --flow-space: var(--flowSpace);
+    margin-block-start: var(--flow-space);
+  }
+
+  .flow :global(h2) {
+    --flow-space: var(--space-size-3);
+  }
+
+  .flow :global(h3) {
+    --flow-space: var(--space-size-3);
+  }
+
+  .flow :global(h2 + *) {
+    --flow-space: var(--space-base);
+  }
+
+  .flow :global(h3 + *) {
+    --flow-space: var(--space-base);
+  }
+</style>
