@@ -1,0 +1,29 @@
+---
+export interface Props {
+  idealWidth: string;
+  minWidth: string;
+  maxWidth: string;
+  gutter: string;
+}
+
+const {
+  idealWidth = "90vw",
+  minWidth = "16rem",
+  maxWidth = "70rem",
+  gutter = "1.5rem",
+} = Astro.props;
+---
+
+<div class="wrapper">
+  <slot />
+</div>
+
+<style define:vars={{ idealWidth, minWidth, maxWidth, gutter }}>
+  .wrapper {
+    width: var(--idealWidth); /* in case clamp() isn't supported */
+    width: clamp(var(--minWidth), var(--idealWidth), var(--maxWidth));
+    margin-inline: auto;
+    padding-inline: var(--gutter);
+    position: relative;
+  }
+</style>
