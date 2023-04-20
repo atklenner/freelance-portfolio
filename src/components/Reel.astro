@@ -1,0 +1,25 @@
+---
+export interface Props {
+  className: string;
+}
+
+const { className = "" } = Astro.props;
+---
+
+<div class={`reel ${className}`}>
+  <slot />
+</div>
+
+<style>
+  .reel {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 30%;
+    overflow-x: scroll;
+    scroll-snap-type-x: mandatory;
+  }
+
+  .reel :global(> *) {
+    scroll-snap-align: start;
+  }
+</style>
