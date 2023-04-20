@@ -1,0 +1,22 @@
+---
+export interface Props {
+  className: string;
+}
+
+const { className } = Astro.props;
+---
+
+<div class={`flex-grid ${className}`}>
+  <slot />
+</div>
+
+<style>
+  .flex-grid {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .flex-grid :global(> *) {
+    flex: 1;
+  }
+</style>

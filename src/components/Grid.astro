@@ -1,0 +1,23 @@
+---
+export interface Props {
+  className: string;
+  gridMinWidth: string;
+}
+
+const { gridMinWidth = "250px", className } = Astro.props;
+---
+
+<div class={`grid ${className}`}>
+  <slot />
+</div>
+
+<style define:vars={{ gridMinWidth }}>
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(
+      auto-fit,
+      minmax(min(var(--gridMinWidth), 100%)),
+      1fr
+    );
+  }
+</style>
