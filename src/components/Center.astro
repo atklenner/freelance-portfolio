@@ -2,12 +2,17 @@
 export interface Props {
   gutter: string;
   maxInlineSize: string;
+  className: string;
 }
 
-const { gutter = "var(--space-size-1)", maxInlineSize = "75ch" } = Astro.props;
+const {
+  className = "",
+  gutter = "var(--space-size-1)",
+  maxInlineSize = "75ch",
+} = Astro.props;
 ---
 
-<div class="center">
+<div class={`center ${className}`}>
   <slot />
 </div>
 

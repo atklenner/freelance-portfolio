@@ -1,22 +1,22 @@
 ---
 export interface Props {
-  gutter: string;
   sidebarWidth: string;
   notSidebarMinSize: string;
   sidebarRight: boolean;
+  className: string;
 }
 
 const {
-  gutter = "var(--space-size-1)",
   sidebarWidth = "auto",
   notSidebarMinSize = "66.666%",
   sidebarRight = false,
+  className = "",
 } = Astro.props;
 
 const flexDirection = sidebarRight ? "row-reverse" : "row";
 ---
 
-<div class="has-sidebar">
+<div class={`has-sidebar ${className}`}>
   <div class="sidebar">
     <slot name="sidebar" />
   </div>
@@ -25,11 +25,10 @@ const flexDirection = sidebarRight ? "row-reverse" : "row";
   </div>
 </div>
 
-<style define:vars={{ gutter, sidebarWidth, notSidebarMinSize, flexDirection }}>
+<style define:vars={{ sidebarWidth, notSidebarMinSize, flexDirection }}>
   .has-sidebar {
     display: flex;
     flex-wrap: wrap;
-    gap: var(--gutter);
     flex-direction: var(--flexDirection);
   }
 

@@ -1,12 +1,13 @@
 ---
 export interface Props {
   flowSpace: string;
+  className: string;
 }
 
-const { flowSpace = "var(--space-size-1)" } = Astro.props;
+const { className = "", flowSpace = "var(--space-size-1)" } = Astro.props;
 ---
 
-<article class="flow-recursive">
+<article class={`flow-recursive ${className}`}>
   <slot />
 </article>
 
