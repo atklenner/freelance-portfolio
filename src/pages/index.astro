@@ -1,136 +1,37 @@
 ---
-import Stack from "../components/Stack.astro";
 import Layout from "../layouts/Layout.astro";
-import Center from "../components/Center.astro";
-import Flow from "../components/Flow.astro";
-import Cluster from "../components/Cluster.astro";
-import Sidebar from "../components/Sidebar.astro";
-import Wrapper from "../components/Wrapper.astro";
-import Switcher from "../components/Switcher.astro";
-import Cover from "../components/Cover.astro";
-import Grid from "../components/Grid.astro";
-import Frame from "../components/Frame.astro";
-import TestSection from "../components/TestSection.astro";
-import TestCard from "../components/TestCard.astro";
-import TestLinkCard from "../components/TestLinkCard.astro";
+import Section from "../components/Section.astro";
+import Card from "../components/Card.astro";
 ---
 
 <Layout title="Welcome to my page.">
   <main>
-    <Cover className="min-h-screen">
-      <Wrapper slot="header">
-        <header>
-          <Cluster className="justify-between p-4">
-            <a href="#">Header Link</a>
-            <nav>
-              <Cluster isList={true} className="gap-4">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Page Layouts</a></li>
-                <li><a href="#">Elements</a></li>
-              </Cluster>
-            </nav>
-          </Cluster>
-        </header>
-      </Wrapper>
-      <Wrapper slot="center">
-        <Stack className="gap-4 items-center">
-          <h1>Lorem Ipsum Dolor</h1>
-          <p>Sed lorem consequat feugiat</p>
-          <a href="#">Magna sed etiam</a>
-        </Stack>
-      </Wrapper>
-    </Cover>
-    <TestSection heading="Magna Feugiat" className="bg-lime-200">
-      <p slot="blurb">
+    <Section style="style-1">
+      <h2>Magna Feugiat</h2>
+      <p>
         Aliquet ante lobortis non semper gravida. Accumsan faucibus praesent
         ante aliquet amet posuere ac cubilia. Eu faucibus mi neque adipiscing mi
         lorem. Semper blandit. Amet adipiscing interdum.
       </p>
-      <Switcher slot="layout" className="gap-6" threshold="800px">
-        <TestCard heading="Aliquam Tinci" className="bg-lime-100">
-          <p>
-            Morbi in sem quis dui placerat ornare lorem pellentesque odio nisi
-            sed euismod. In tempus posuere augue eu magna adipiscing.
-          </p>
-        </TestCard>
-        <TestCard heading="Nunc Dignis" className="bg-lime-100">
-          <p>
-            Morbi in sem quis dui placerat ornare lorem pellentesque odio nisi
-            sed euismod. In tempus posuere augue eu magna adipiscing.
-          </p>
-        </TestCard>
-        <TestCard heading="Integer Vita" className="bg-lime-100">
-          <p>
-            Morbi in sem quis dui placerat ornare lorem pellentesque odio nisi
-            sed euismod. In tempus posuere augue eu magna adipiscing.
-          </p>
-        </TestCard>
-      </Switcher>
-    </TestSection>
-    <TestSection heading="Consectetuer Adipis" className="bg-red-300">
-      <p slot="blurb">
+      <div class="switcher">
+        <Card />
+        <Card />
+        <Card />
+      </div>
+    </Section>
+    <Section style="style-2">
+      <h2>Magna Feugiat</h2>
+      <p>
         Aliquet ante lobortis non semper gravida. Accumsan faucibus praesent
         ante aliquet amet posuere ac cubilia. Eu faucibus mi neque adipiscing mi
         lorem. Semper blandit. Amet adipiscing interdum.
       </p>
-      <Grid slot="layout" gridMinWidth="500px" className="gap-6">
-        <TestCard heading="Ipsum Feugiat" className="bg-red-100">
-          <p>
-            Aliquet ante lobortis semper gravida. quet amet posuere ac cubilia.
-            Eu faucibus mi neque adipiscing mi lorem ipsum dolor sit amet
-            nullam. Amet semper interdum nunc aliquam lobortis id lobortis.
-          </p>
-        </TestCard>
-        <TestCard heading="Ipsum Feugiat" className="bg-red-100">
-          <p>
-            Aliquet ante lobortis semper gravida. quet amet posuere ac cubilia.
-            Eu faucibus mi neque adipiscing mi lorem ipsum dolor sit amet
-            nullam. Amet semper interdum nunc aliquam lobortis id lobortis.
-          </p>
-        </TestCard>
-        <TestCard heading="Ipsum Feugiat" className="bg-red-100">
-          <p>
-            Aliquet ante lobortis semper gravida. quet amet posuere ac cubilia.
-            Eu faucibus mi neque adipiscing mi lorem ipsum dolor sit amet
-            nullam. Amet semper interdum nunc aliquam lobortis id lobortis.
-          </p>
-        </TestCard>
-        <TestCard heading="Ipsum Feugiat" className="bg-red-100">
-          <p>
-            Aliquet ante lobortis semper gravida. quet amet posuere ac cubilia.
-            Eu faucibus mi neque adipiscing mi lorem ipsum dolor sit amet
-            nullam. Amet semper interdum nunc aliquam lobortis id lobortis.
-          </p>
-        </TestCard>
-      </Grid>
-    </TestSection>
-    <TestSection heading="Sed Faucibus" className="bg-gray-100">
-      <Switcher slot="layout">
-        <TestLinkCard heading="Etiam Interdum">
-          <p>
-            Praesent dapibus, neque id cursus tortor magna etiam lorem neque
-            egestas sed magna tempus.
-          </p>
-          <a href="#">Learn More</a>
-        </TestLinkCard>
-        <TestLinkCard heading="Etiam Interdum">
-          <p>
-            Praesent dapibus, neque id cursus tortor magna etiam lorem neque
-            egestas sed magna tempus.
-          </p>
-          <a href="#">Learn More</a>
-        </TestLinkCard>
-        <TestLinkCard heading="Etiam Interdum">
-          <p>
-            Praesent dapibus, neque id cursus tortor magna etiam lorem neque
-            egestas sed magna tempus.
-          </p>
-          <a href="#">Learn More</a>
-        </TestLinkCard>
-      </Switcher>
-    </TestSection>
-    <TestSection heading="Contact" className="bg-gray-200">
-      <p slot="layout">Not sure how to do this one yet</p>
-    </TestSection>
+      <div class="grid">
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+      </div>
+    </Section>
   </main>
 </Layout>

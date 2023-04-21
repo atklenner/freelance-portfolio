@@ -26,7 +26,8 @@ const { title } = Astro.props;
 
 <style is:global>
   body {
-    font-size: var(--size-1);
+    font-size: var(--base);
+    color: var(--clr-neutral-400);
   }
 
   h1,
@@ -36,15 +37,15 @@ const { title } = Astro.props;
   }
 
   h1 {
-    font-size: var(--size-4);
-  }
-
-  h2 {
     font-size: var(--size-3);
   }
 
-  h3 {
+  h2 {
     font-size: var(--size-2);
+  }
+
+  h3 {
+    font-size: var(--size-1);
   }
 
   h2,
@@ -55,5 +56,14 @@ const { title } = Astro.props;
   h2 + *,
   h3 + * {
     --flow-space: var(--base);
+  }
+
+  ul,
+  ol {
+    padding: 0;
+  }
+
+  li {
+    list-style: none;
   }
 </style>

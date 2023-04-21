@@ -46,13 +46,4 @@ h6 {
   isolation: isolate;
 }
 
-ul,
-ol {
-  padding: 0;
-}
-
-li {
-  list-style: none;
-}
-
 @tailwind utilities;
