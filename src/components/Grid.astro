@@ -4,7 +4,7 @@ export interface Props {
   gridMinWidth: string;
 }
 
-const { gridMinWidth = "250px", className } = Astro.props;
+const { gridMinWidth = "250px", className = "" } = Astro.props;
 ---
 
 <div class={`grid ${className}`}>
@@ -16,8 +16,7 @@ const { gridMinWidth = "250px", className } = Astro.props;
     display: grid;
     grid-template-columns: repeat(
       auto-fit,
-      minmax(min(var(--gridMinWidth), 100%)),
-      1fr
+      minmax(min(var(--gridMinWidth), 100%), 1fr)
     );
   }
 </style>

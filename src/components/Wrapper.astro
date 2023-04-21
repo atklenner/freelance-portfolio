@@ -4,7 +4,7 @@ export interface Props {
   minWidth: string;
   maxWidth: string;
   gutter: string;
-  children: any;
+  className: string;
 }
 
 const {
@@ -12,10 +12,11 @@ const {
   minWidth = "16rem",
   maxWidth = "70rem",
   gutter = "var(--space-size-1)",
+  className = "",
 } = Astro.props;
 ---
 
-<div class="wrapper">
+<div class={`wrapper ${className}`}>
   <slot />
 </div>
 
