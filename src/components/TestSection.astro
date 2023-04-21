@@ -1,0 +1,21 @@
+---
+import Wrapper from "./Wrapper.astro";
+import Stack from "./Stack.astro";
+
+export interface Props {
+  heading: string;
+  className: string;
+}
+
+const { heading, className = "" } = Astro.props;
+---
+
+<section class={className}>
+  <Wrapper className="py-16">
+    <Stack className="gap-6 text-center">
+      <h2>{heading}</h2>
+      <slot name="blurb" />
+      <slot name="layout" />
+    </Stack>
+  </Wrapper>
+</section>

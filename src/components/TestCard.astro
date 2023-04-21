@@ -1,0 +1,19 @@
+---
+import Stack from "./Stack.astro";
+import Frame from "./Frame.astro";
+
+export interface Props {
+  heading: string;
+  className: string;
+}
+
+const { heading, className = "" } = Astro.props;
+---
+
+<Stack className={`p-6 gap-4 items-center ${className}`}>
+  <Frame className="aspect-square rounded-full">
+    <img src="https://picsum.photos/100/100" alt="" />
+  </Frame>
+  <h3>{heading}</h3>
+  <slot />
+</Stack>

@@ -9,87 +9,128 @@ import Wrapper from "../components/Wrapper.astro";
 import Switcher from "../components/Switcher.astro";
 import Cover from "../components/Cover.astro";
 import Grid from "../components/Grid.astro";
+import Frame from "../components/Frame.astro";
+import TestSection from "../components/TestSection.astro";
+import TestCard from "../components/TestCard.astro";
+import TestLinkCard from "../components/TestLinkCard.astro";
 ---
 
-<Layout title="Welcom to my page.">
-  <Wrapper>
+<Layout title="Welcome to my page.">
+  <main>
     <Cover className="min-h-screen">
-      <Cluster isList={true} slot="header">
-        <li>thing</li>
-        <li>thing</li>
-        <li>thing</li>
-        <li>thing</li>
-      </Cluster>
-      <h1 slot="center">What's crackin'?</h1>
-      <Center slot="footer"><p>Andrew Klenner</p></Center>
+      <Wrapper slot="header">
+        <header>
+          <Cluster className="justify-between p-4">
+            <a href="#">Header Link</a>
+            <nav>
+              <Cluster isList={true} className="gap-4">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Page Layouts</a></li>
+                <li><a href="#">Elements</a></li>
+              </Cluster>
+            </nav>
+          </Cluster>
+        </header>
+      </Wrapper>
+      <Wrapper slot="center">
+        <Stack className="gap-4 items-center">
+          <h1>Lorem Ipsum Dolor</h1>
+          <p>Sed lorem consequat feugiat</p>
+          <a href="#">Magna sed etiam</a>
+        </Stack>
+      </Wrapper>
     </Cover>
-    <Sidebar sidebarWidth="20ch" className="gap-6">
-      <Cluster slot="sidebar" className="gap-4 items-center justify-between">
-        <p>Logo</p>
-        <Switcher className="gap-4">
-          <a href="#">Link</a>
-          <a href="#">Link</a>
-          <a href="#">Link</a>
-          <a href="#">Link</a>
-        </Switcher>
-      </Cluster>
-      <Center slot="not-sidebar">
-        <Flow>
-          <h1>Welcome</h1>
+    <TestSection heading="Magna Feugiat" className="bg-lime-200">
+      <p slot="blurb">
+        Aliquet ante lobortis non semper gravida. Accumsan faucibus praesent
+        ante aliquet amet posuere ac cubilia. Eu faucibus mi neque adipiscing mi
+        lorem. Semper blandit. Amet adipiscing interdum.
+      </p>
+      <Switcher slot="layout" className="gap-6" threshold="800px">
+        <TestCard heading="Aliquam Tinci" className="bg-lime-100">
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo
-            tempore est ipsam minus placeat eligendi aliquam, quibusdam, cum
-            dolorum cumque odio aliquid odit reiciendis earum quam veniam
-            consequuntur temporibus. Libero.
+            Morbi in sem quis dui placerat ornare lorem pellentesque odio nisi
+            sed euismod. In tempus posuere augue eu magna adipiscing.
           </p>
-          <h2>Here is an H2</h2>
+        </TestCard>
+        <TestCard heading="Nunc Dignis" className="bg-lime-100">
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo
-            tempore est ipsam minus placeat eligendi aliquam, quibusdam, cum
-            dolorum cumque odio aliquid odit reiciendis earum quam veniam
-            consequuntur temporibus. Libero.
+            Morbi in sem quis dui placerat ornare lorem pellentesque odio nisi
+            sed euismod. In tempus posuere augue eu magna adipiscing.
           </p>
+        </TestCard>
+        <TestCard heading="Integer Vita" className="bg-lime-100">
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo
-            tempore est ipsam minus placeat eligendi aliquam, quibusdam, cum
-            dolorum cumque odio aliquid odit reiciendis earum quam veniam
-            consequuntur temporibus. Libero.
+            Morbi in sem quis dui placerat ornare lorem pellentesque odio nisi
+            sed euismod. In tempus posuere augue eu magna adipiscing.
           </p>
-          <h3>Here is an H3</h3>
+        </TestCard>
+      </Switcher>
+    </TestSection>
+    <TestSection heading="Consectetuer Adipis" className="bg-red-300">
+      <p slot="blurb">
+        Aliquet ante lobortis non semper gravida. Accumsan faucibus praesent
+        ante aliquet amet posuere ac cubilia. Eu faucibus mi neque adipiscing mi
+        lorem. Semper blandit. Amet adipiscing interdum.
+      </p>
+      <Grid slot="layout" gridMinWidth="500px" className="gap-6">
+        <TestCard heading="Ipsum Feugiat" className="bg-red-100">
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo
-            tempore est ipsam minus placeat eligendi aliquam, quibusdam, cum
-            dolorum cumque odio aliquid odit reiciendis earum quam veniam
-            consequuntur temporibus. Libero.
+            Aliquet ante lobortis semper gravida. quet amet posuere ac cubilia.
+            Eu faucibus mi neque adipiscing mi lorem ipsum dolor sit amet
+            nullam. Amet semper interdum nunc aliquam lobortis id lobortis.
           </p>
+        </TestCard>
+        <TestCard heading="Ipsum Feugiat" className="bg-red-100">
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo
-            tempore est ipsam minus placeat eligendi aliquam, quibusdam, cum
-            dolorum cumque odio aliquid odit reiciendis earum quam veniam
-            consequuntur temporibus. Libero.
+            Aliquet ante lobortis semper gravida. quet amet posuere ac cubilia.
+            Eu faucibus mi neque adipiscing mi lorem ipsum dolor sit amet
+            nullam. Amet semper interdum nunc aliquam lobortis id lobortis.
           </p>
-          <Stack className="gap-2">
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-              Explicabo tempore est ipsam minus placeat eligendi aliquam,
-              quibusdam, cum dolorum cumque odio aliquid odit reiciendis earum
-              quam veniam consequuntur temporibus. Libero.
-            </p>
-            <p class="split-after">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-              Explicabo tempore est ipsam minus placeat eligendi aliquam,
-              quibusdam, cum dolorum cumque odio aliquid odit reiciendis earum
-              quam veniam consequuntur temporibus. Libero.
-            </p>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-              Explicabo tempore est ipsam minus placeat eligendi aliquam,
-              quibusdam, cum dolorum cumque odio aliquid odit reiciendis earum
-              quam veniam consequuntur temporibus. Libero.
-            </p>
-          </Stack>
-        </Flow>
-      </Center>
-    </Sidebar>
-  </Wrapper>
+        </TestCard>
+        <TestCard heading="Ipsum Feugiat" className="bg-red-100">
+          <p>
+            Aliquet ante lobortis semper gravida. quet amet posuere ac cubilia.
+            Eu faucibus mi neque adipiscing mi lorem ipsum dolor sit amet
+            nullam. Amet semper interdum nunc aliquam lobortis id lobortis.
+          </p>
+        </TestCard>
+        <TestCard heading="Ipsum Feugiat" className="bg-red-100">
+          <p>
+            Aliquet ante lobortis semper gravida. quet amet posuere ac cubilia.
+            Eu faucibus mi neque adipiscing mi lorem ipsum dolor sit amet
+            nullam. Amet semper interdum nunc aliquam lobortis id lobortis.
+          </p>
+        </TestCard>
+      </Grid>
+    </TestSection>
+    <TestSection heading="Sed Faucibus" className="bg-gray-100">
+      <Switcher slot="layout">
+        <TestLinkCard heading="Etiam Interdum">
+          <p>
+            Praesent dapibus, neque id cursus tortor magna etiam lorem neque
+            egestas sed magna tempus.
+          </p>
+          <a href="#">Learn More</a>
+        </TestLinkCard>
+        <TestLinkCard heading="Etiam Interdum">
+          <p>
+            Praesent dapibus, neque id cursus tortor magna etiam lorem neque
+            egestas sed magna tempus.
+          </p>
+          <a href="#">Learn More</a>
+        </TestLinkCard>
+        <TestLinkCard heading="Etiam Interdum">
+          <p>
+            Praesent dapibus, neque id cursus tortor magna etiam lorem neque
+            egestas sed magna tempus.
+          </p>
+          <a href="#">Learn More</a>
+        </TestLinkCard>
+      </Switcher>
+    </TestSection>
+    <TestSection heading="Contact" className="bg-gray-200">
+      <p slot="layout">Not sure how to do this one yet</p>
+    </TestSection>
+  </main>
 </Layout>
