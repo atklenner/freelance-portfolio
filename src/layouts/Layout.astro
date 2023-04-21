@@ -28,6 +28,7 @@ const { title } = Astro.props;
   body {
     font-size: var(--base);
     color: var(--clr-neutral-400);
+    font-family: sans-serif;
   }
 
   h1,
@@ -58,6 +59,10 @@ const { title } = Astro.props;
     --flow-space: var(--base);
   }
 
+  p {
+    max-inline-size: 75ch;
+  }
+
   ul,
   ol {
     padding: 0;
@@ -65,5 +70,37 @@ const { title } = Astro.props;
 
   li {
     list-style: none;
+  }
+
+  .button-primary {
+    text-decoration: none;
+    padding-inline: 1rem;
+    padding-block: 0.5rem;
+    color: var(--clr-neutral-100);
+    font-weight: bold;
+    border: none;
+    transition: background-color ease-in 0.1s;
+    background-color: var(--clr-red-400);
+  }
+
+  .button-primary:hover,
+  .button-primary:focus-visible {
+    background-color: var(--clr-red-300);
+  }
+
+  .button-neutral {
+    text-decoration: none;
+    padding-inline: 1rem;
+    padding-block: 0.5rem;
+    color: inherit;
+    border: 3px var(--clr-neutral-900) solid;
+    background-color: transparent;
+    font-weight: bold;
+    transition: background-color ease-in 0.1s;
+  }
+
+  .button-neutral:hover,
+  .button-neutral:focus-visible {
+    background-color: var(--clr-neutral-300);
   }
 </style>

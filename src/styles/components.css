@@ -4,7 +4,7 @@
   --min-width: 16rem;
 
   width: var(--ideal-width);
-  width: clamp(var(--min-width), var(--idealWidth), var(--max-width));
+  width: clamp(var(--min-width), var(--ideal-width), var(--max-width));
   margin-inline: auto;
   /* padding-inline: var(--size-1); */
   position: relative;
