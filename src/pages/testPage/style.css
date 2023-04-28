@@ -1,0 +1,9 @@
+@import "./blocks/card.css";
+
+main {
+  background-color: lightgray;
+}
+
+main > p {
+  color: red;
+}
