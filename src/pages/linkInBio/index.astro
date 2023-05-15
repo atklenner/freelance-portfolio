@@ -23,29 +23,25 @@ import "./styles/reset.css";
         </p>
       </div>
 
-      <div class="socials">
-        <a href="#" class="social">
-          <img src="https://picsum.photos/100/100" alt="" />
-          <p>Social Link</p>
-        </a>
-        <a href="#" class="social">
-          <img src="https://picsum.photos/100/100" alt="" />
-          <p>Social Link</p>
-        </a>
-        <a href="#" class="social">
-          <img src="https://picsum.photos/100/100" alt="" />
-          <p>Social Link</p>
-        </a>
-        <a href="#" class="social">
-          <img src="https://picsum.photos/100/100" alt="" />
-          <p>Social Link</p>
-        </a>
-      </div>
-
       <div class="cards">
         <button>About</button>
         <button class="primary">Work</button>
         <button>Contact</button>
+      </div>
+
+      <div class="socials">
+        <a href="#" class="social">
+          <img src="https://picsum.photos/100/100" alt="" />
+        </a>
+        <a href="#" class="social">
+          <img src="https://picsum.photos/100/100" alt="" />
+        </a>
+        <a href="#" class="social">
+          <img src="https://picsum.photos/100/100" alt="" />
+        </a>
+        <a href="#" class="social">
+          <img src="https://picsum.photos/100/100" alt="" />
+        </a>
       </div>
     </main>
   </body>
@@ -53,8 +49,8 @@ import "./styles/reset.css";
 
 <style>
   :root {
-    --big-gap: 2rem;
-    --little-gap: 1rem;
+    --big-gap: 1rem;
+    --little-gap: 0.5rem;
   }
 
   body {
@@ -65,7 +61,7 @@ import "./styles/reset.css";
   main {
     max-width: 1000px;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     gap: var(--big-gap);
     margin: var(--big-gap);
 
@@ -89,24 +85,21 @@ import "./styles/reset.css";
 
   .socials {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(4, 1fr);
     gap: var(--big-gap);
+    place-items: center;
   }
 
   .social {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: var(--little-gap);
-    background-color: #d9d9d9;
-    border-radius: 0.5rem;
+  }
+
+  .social > img {
+    width: 50px;
+    aspect-ratio: 1;
   }
 
   .cards {
-    grid-column: span 2;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
     gap: var(--big-gap);
   }
 
@@ -125,5 +118,27 @@ import "./styles/reset.css";
   button:hover {
     background-color: black;
     color: white;
+  }
+
+  @media (min-width: 700px) {
+    :root {
+      --big-gap: 2rem;
+      --little-gap: 1rem;
+    }
+
+    main {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .socials {
+      grid-column: span 2;
+    }
+
+    .social > img {
+      width: 100px;
+    }
+
+    .cards {
+    }
   }
 </style>
