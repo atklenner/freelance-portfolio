@@ -12,40 +12,135 @@ import "./styles/reset.css";
   </head>
   <body>
     <main>
-      <div class="bio">
-        <img src="https://picsum.photos/250/250" alt="" />
-        <h1>Person Name</h1>
+      <article id="links-article" class="links">
+        <div class="bio">
+          <img src="https://picsum.photos/250/250" alt="" />
+          <h1>Person Name</h1>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci
+            ratione voluptatum, itaque maiores magnam tempora quos quo
+            consequatur voluptatem? Debitis exercitationem eius minus, inventore
+            quis quia perferendis vel est adipisci!
+          </p>
+        </div>
+
+        <ul class="cards">
+          <li>
+            <button data-open="about-article" data-close="links-article"
+              >About</button
+            >
+          </li>
+          <li>
+            <button
+              class="primary"
+              data-open="work-article"
+              data-close="links-article">Work</button
+            >
+          </li>
+          <li>
+            <button data-open="contact-article" data-close="links-article"
+              >Contact</button
+            >
+          </li>
+        </ul>
+
+        <ul class="socials">
+          <li>
+            <a href="#" class="social">
+              <img src="https://picsum.photos/100/100" alt="" />
+            </a>
+          </li>
+          <li>
+            <a href="#" class="social">
+              <img src="https://picsum.photos/100/100" alt="" />
+            </a>
+          </li>
+          <li>
+            <a href="#" class="social">
+              <img src="https://picsum.photos/100/100" alt="" />
+            </a>
+          </li>
+          <li>
+            <a href="#" class="social">
+              <img src="https://picsum.photos/100/100" alt="" />
+            </a>
+          </li>
+        </ul>
+      </article>
+      <article id="about-article" class="hidden">
+        <div class="card-head">
+          <h2>About Me</h2>
+          <button data-open="links-article" data-close="about-article"
+            >Back</button
+          >
+        </div>
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci
-          ratione voluptatum, itaque maiores magnam tempora quos quo consequatur
-          voluptatem? Debitis exercitationem eius minus, inventore quis quia
-          perferendis vel est adipisci!
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Blanditiis
+          accusantium officia asperiores ducimus inventore dolore iste sit
+          provident placeat vero, hic fuga repudiandae cumque impedit eaque
+          fugiat commodi harum doloremque.
         </p>
-      </div>
-
-      <div class="cards">
-        <button>About</button>
-        <button class="primary">Work</button>
-        <button>Contact</button>
-      </div>
-
-      <div class="socials">
-        <a href="#" class="social">
-          <img src="https://picsum.photos/100/100" alt="" />
-        </a>
-        <a href="#" class="social">
-          <img src="https://picsum.photos/100/100" alt="" />
-        </a>
-        <a href="#" class="social">
-          <img src="https://picsum.photos/100/100" alt="" />
-        </a>
-        <a href="#" class="social">
-          <img src="https://picsum.photos/100/100" alt="" />
-        </a>
-      </div>
+        <p>
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Blanditiis
+          accusantium officia asperiores ducimus inventore dolore iste sit
+          provident placeat vero, hic fuga repudiandae cumque impedit eaque
+          fugiat commodi harum doloremque.
+        </p>
+      </article>
+      <article id="work-article" class="hidden">
+        <div class="card-head">
+          <h2>My Past Work</h2>
+          <button data-open="links-article" data-close="work-article"
+            >Back</button
+          >
+        </div>
+        <p>
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Blanditiis
+          accusantium officia asperiores ducimus inventore dolore iste sit
+          provident placeat vero, hic fuga repudiandae cumque impedit eaque
+          fugiat commodi harum doloremque.
+        </p>
+        <p>
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Blanditiis
+          accusantium officia asperiores ducimus inventore dolore iste sit
+          provident placeat vero, hic fuga repudiandae cumque impedit eaque
+          fugiat commodi harum doloremque.
+        </p>
+      </article>
+      <article id="contact-article" class="hidden">
+        <div class="card-head">
+          <h2>Contact Me</h2>
+          <button data-open="links-article" data-close="contact-article"
+            >Back</button
+          >
+        </div>
+        <form action="#" method="post">
+          <label for="name">Name</label>
+          <input type="text" name="name" id="name" />
+          <label for="email">Email</label>
+          <input type="email" name="email" id="email" />
+          <label for="message">Message</label>
+          <textarea name="message" id="message" cols="30" rows="10"></textarea>
+        </form>
+      </article>
     </main>
   </body>
 </html>
+
+<script>
+  let buttons = document.querySelectorAll("button");
+  buttons.forEach((button) => {
+    button.addEventListener("click", () => {
+      let closeArticle = button.dataset.close;
+      let openArticle = button.dataset.open;
+
+      if (closeArticle && openArticle) {
+        document.getElementById(closeArticle)?.classList.toggle("hidden");
+        document.getElementById(openArticle)?.classList.toggle("hidden");
+      }
+    });
+  });
+</script>
 
 <style>
   :root {
@@ -60,14 +155,25 @@ import "./styles/reset.css";
 
   main {
     max-width: 1000px;
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: var(--big-gap);
     margin: var(--big-gap);
+  }
 
+  article {
     background-color: #f2f2f2;
     padding: var(--big-gap);
     border-radius: 1rem;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .links {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--big-gap);
   }
 
   .bio {
@@ -103,8 +209,14 @@ import "./styles/reset.css";
     gap: var(--big-gap);
   }
 
+  .card-head {
+    display: flex;
+    justify-content: space-between;
+    margin-block-end: var(--big-gap);
+  }
+
   button {
-    padding-block: 1rem;
+    padding: 0.25rem 1rem;
     border: none;
     background-color: #d9d9d9;
     cursor: pointer;
@@ -120,13 +232,22 @@ import "./styles/reset.css";
     color: white;
   }
 
+  .hidden {
+    display: none;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+
   @media (min-width: 700px) {
     :root {
       --big-gap: 2rem;
       --little-gap: 1rem;
     }
 
-    main {
+    .links {
       grid-template-columns: 1fr 1fr;
     }
 
